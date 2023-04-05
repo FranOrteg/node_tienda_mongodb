@@ -1,0 +1,59 @@
+@host = http://localhost:3000
+@apiProducts = /api/products
+@apiUsers = /api/users
+
+### API PRODUCTS
+GET {{host}}{{apiProducts}}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQyYmZhNDUyNmJmYTYzMzA1ZWI1YjhkIiwicm9sZSI6InJlZ3VsYXIiLCJleHAiOjE2ODEwNTQ0NjgsImlhdCI6MTY4MDYyMjQ2OH0.cvrD27t6PY0eIyyEpLQZW0F8iPhLpMbo16kdLlPaSaE
+
+###
+POST {{host}}{{apiProducts}}
+Content-Type: application/json
+
+{
+    "name": "Pantalones azules",
+    "description": "Son vaqueros",
+    "price": 80,
+    "department": "moda",
+    "available": true,
+    "stock": 12
+}
+
+###
+GET {{host}}{{apiProducts}}/642ad7d382291933fa3c66fe
+###
+GET {{host}}{{apiProducts}}/price/500
+###
+GET {{host}}{{apiProducts}}/department/Tech
+
+###
+PUT {{host}}{{apiProducts}}/stock
+
+### API USERS
+POST  {{host}}{{apiUsers}}/register
+Content-Type: application/json
+
+{
+    "username": "Raquel",
+    "email": "maldona@gmail.com",
+    "password": "12378",
+    "role": "regular",
+    "active": true
+}
+
+### 
+POST  {{host}}{{apiUsers}}/login
+Content-Type: application/json
+
+{
+    "email": "fran@gmail.com",
+    "password": "12345"
+}
+
+###
+GET {{host}}{{apiUsers}}/buy/642ad7d382291933fa3c66fe
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQyYmZhNDUyNmJmYTYzMzA1ZWI1YjhkIiwicm9sZSI6InJlZ3VsYXIiLCJleHAiOjE2ODExMjE1NTgsImlhdCI6MTY4MDY4OTU1OH0.j0Ltt9Cv8NLUmDsOyfAAtI0W9UMPCAHmqYIJQ6GhsVc
+
+###
+GET {{host}}{{apiUsers}}/cart
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQyYmZhMzAyNmJmYTYzMzA1ZWI1YjhiIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjgxMTMyOTY3LCJpYXQiOjE2ODA3MDA5Njd9.hDdTEyZGWILSOAwvHg0qow_E5hk2KMOJhFQxFG5vDpg
